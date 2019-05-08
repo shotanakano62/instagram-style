@@ -1,0 +1,36 @@
+<div class="main users-index">
+  <div class="container">
+    <h1 class="users-heading">ユーザー</h1>
+    <% @users.each do |user| %>
+      <div class="users-index-item">
+        <div class="user-left">
+          <%= link_to(user.name,"/users/#{user.id}/detail") %>
+        </div>
+      
+      <% unless @current_user.following.include?(user)%>
+        
+
+
+
+        <%= form_for(@current_user.active_relationships.build) do |f| %>
+          <div class="follow"><%= hidden_field_tag :following_id, user.id %></div>
+          <%= f.submit "Follow", class: "btn-flat-border" %>
+        <% end %>
+
+
+      <% else %>
+
+      
+        <%= form_for(@current_user.active_relationships.find_by(following_id: user.id), html: { method: :delete }) do |f| %>
+          <div class="unfollow">
+              <%= f.submit "Unfollow", class: "btn-flat-border" %>
+          </div>
+        <% end %>
+      
+
+      <% end %>
+
+      </div>
+    <% end %>
+  </div>
+</div>

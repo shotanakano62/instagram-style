@@ -1,0 +1,153 @@
+// Place all the styles related to the post controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.index-items {
+    padding: 20px 30px;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 2px 6px #c1ced7;
+  }
+
+.post-header {
+    float: left;
+}
+.post-header img{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 6px #c1ced7;
+}
+
+.post-body {
+    clear: both;
+}
+
+.post-footer {
+    padding-bottom: 15px;
+}
+.post-footer a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.post-menu {
+    font-size: 12px;
+    float: right;
+    width: 100%;
+    text-align: right;
+    padding-bottom: 25px;
+   
+}
+.post-menu a{
+    text-decoration: underline;
+    color: rgb(139, 135, 135);
+}
+
+.post-user {
+    float: left;
+    padding: 10px 10px;
+}
+
+.post-user a {
+    text-decoration: none;
+    color: black;
+}
+
+.post-created-time {
+    float: left;
+    font-size: 10px;
+}
+
+.posted-photo{
+   max-width: 300px;
+   height: auto;
+    object-fit: contain;
+}
+
+.fa-comments {
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+.index-items textarea {
+    width: 100%
+}
+
+
+.comment-area {
+    margin-bottom: 30px;
+    width: 100%;
+    display: none;
+    clear: both;
+}
+
+.comment-area textarea {
+    resize: none;
+}
+
+.comments {
+    font-size: 13px;
+    border-top: solid 0.5px rgb(201, 197, 197);
+    height: auto;
+    clear: both;
+    margin-top: 0;
+
+}
+
+.comment-container {
+    display: none;
+}
+
+.show_comments_button {
+    cursor: pointer;
+}
+
+
+.comment-header {
+    float: left;
+}
+.comment-header img{
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 6px #c1ced7;
+    margin-right: 10px;
+}
+
+.comment-user {
+    width: auto;
+    margin-left: 10px;
+    font-size: 12px;
+    
+}
+
+.comment-user a {
+    text-decoration: none;
+    color: black;
+}
+
+.actual-comment {
+    font-size: 12px;
+    text-align: left;
+    width: 100%;
+    word-wrap: break-word;
+    margin-top: 15px;
+    clear: both;
+}
+
+.actual-comment p{
+    text-align: left;
+}
+
+.comment-created-time {
+
+    font-size: 10px;
+}
+
+.comment-created-time {
+    margin-bottom: 10px;
+}

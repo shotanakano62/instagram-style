@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>InstagramApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  </head>
+
+  <body>
+  <header>
+    <div class="header-logo">
+        <%= link_to("Instagram Mock", "/")%>
+    </div>
+    <ul class="header-menus">
+      <li>
+        <%= link_to("Instagram Mockについて", "/about")%>
+      </li>
+      <% if @current_user %>
+      <li>
+        <%= link_to("投稿一覧", "/posts/index")%>
+      </li>
+      <li>
+        <%= link_to("新規投稿", "/posts/new")%>
+      </li>
+      <li>
+        <%= link_to("/users/index", {method: "get"}) do %>
+        <i class="fas fa-users"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to("Logout", "/logout", {method: :post})%>
+      </li>
+      <li>
+        <%= link_to("/users/#{@current_user.id}/edit", {method: "get"}) do %>
+        <img src="<%= "#{@current_user.profile_image}" %>">
+        <% end %>
+      </li>
+      <li>
+        <%= link_to(@current_user.name, "/users/#{@current_user.id}/detail") %>
+      </li>
+      <% else %>
+      <li class="signup" id="open-signup-modal">
+        <i class="fas fa-user-plus"></i>
+      </li>
+      <li class="login" id="open-login-modal">
+        Login
+      </li>
+      <% end %>
+    </ul>
+  </header>
+      <div class="login-modal-wrapper" id="login-modal">
+        <div class="form login-form">
+          <div class="form-body">
+            <div class="close-modal">
+              <i class="fas fa-times"></i>
+            </div>
+            <p>ログイン情報を入力してください</p>
+            <%=form_tag("/login") do%>
+              <p>Email Address</p>
+              <input name="email">
+              <p>Password</p>
+              <input name="password" type="password">
+              <input type="submit" value="Login">
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+    <div class="signup-modal-wrapper" id="singup-modal">
+      <div class="form signup-form">
+       <div class="form-body">
+            <div class="close-modal">
+            <i class="fas fa-times"></i>
+            </div>
+              <p>ユーザー情報を入力してください</p>
+            <% @user.errors.full_messages.each do |message| %>
+              <div class="form-error">
+                <%= message %>
+              </div>
+              <% end %>
+              <%= form_tag("/users/create", {multipart: true}) do %>
+              <p>User Name</p>
+              <input name="name" value="<%= @user.name%>">
+          
+              <p>Email Address</p>
+              <input name="email" type="email" value="<%= @user.email%>">
+
+              <p>Password</p>
+              <input name="password" type="password" value="<%= @user.password%>">
+                
+              <p>Profile Image</p>
+              <input type="file" id="file" name="image">
+              <input type="submit" value="Sign Up">
+              <% end %>
+            </div>
+        </div>
+      </div>
+
+  <% if flash[:notice] %>
+  <div class="flash">
+    <%= flash[:notice] %>
+  </div>
+  <% end %>
+    <%= yield %>
+  </body>
+</html>
