@@ -63,3 +63,7 @@ gem 'faker'
 
 # Install dotenv-rails to setup environment var
 gem 'dotenv-rails'
+
+group :production, :staging do
+    gem 'unicorn'
+end
