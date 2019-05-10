@@ -26,11 +26,6 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: mysql2
   database: instagram-style_production
-  encoding: utf8
-  pool: 5
-  timeout: 5000
   username: root
   password: 
-  host: localhost
