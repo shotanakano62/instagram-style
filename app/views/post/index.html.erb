@@ -26,7 +26,7 @@
                     <strong><%= post.comments_count%></strong>comments
                 </div>
                 <div class="comments-<%= post.id%>">
-                <% if post.comments_count %>
+                <% if post.comments_count > 0%>
                     <h6 class="show_comments_button" id="show_comments_<%= post.id%>">show comments</h6>
                 <% end %>
                     <div class="comment-area" id="comment-area-<%= post.id%>">
