@@ -64,6 +64,13 @@ gem 'faker'
 # Install dotenv-rails to setup environment var
 gem 'dotenv-rails'
 
+group :development, :test do
+ gem 'capistrano'
+ gem 'capistrano-bundler'
+ gem 'capistrano-rails'
+ gem 'capistrano-rbenv'
+end
+
 group :production, :staging do
     gem 'unicorn'
 end
