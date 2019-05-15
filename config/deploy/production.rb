@@ -62,4 +62,4 @@
 
 server '52.198.195.201', user: 'ec2-user', roles: %w{app db web}
 
-set :ssh_options, keys: '~/.ssh/aws_git_rsa'
+set :ssh_options, keys: '~/.ssh/shota0612.pem'

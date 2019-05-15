@@ -14,4 +14,7 @@ class Post < ApplicationRecord
         return Comment.where(post_id: self.id).count
     end
 
+    def likes_count
+        return Like.where(post_id: self.id).count
+    end
 end

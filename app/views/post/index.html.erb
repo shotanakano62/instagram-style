@@ -23,7 +23,9 @@
                     <%= link_to("delete", "/posts/#{post.id}/delete", {method: "post"}) %>
                     <% end %>
                     <i class="far fa-comments fa-2x" id="<%= post.id%>"></i>
-                    <strong><%= post.comments_count%></strong>comments
+                    <strong><%= post.comments_count%></strong>
+                    <i class="fas fa-heart fa-2x"></i><%= post.likes_count%>
+                    <i class="far fa-heart fa-2x"></i><%= post.likes_count%>
                 </div>
                 <div class="comments-<%= post.id%>">
                 <% if post.comments_count > 0%>

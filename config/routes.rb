@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'likes/create'
   get '/' => "home#top"
   get "/about" => "home#about"
 
