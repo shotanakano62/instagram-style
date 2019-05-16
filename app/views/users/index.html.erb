@@ -2,6 +2,7 @@
   <div class="container">
     <h1 class="users-heading">ユーザー</h1>
     <% @users.each do |user| %>
+     <% if !(@current_user.name == user.name)%>
       <div class="users-index-item">
         <div class="user-left">
           <%= link_to(user.name,"/users/#{user.id}/detail") %>
@@ -31,6 +32,7 @@
       <% end %>
 
       </div>
+    <% end %>
     <% end %>
   </div>
 </div>

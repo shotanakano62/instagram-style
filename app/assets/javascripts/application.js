@@ -83,6 +83,30 @@ $(function(){
         
     });
 
+    /*
+    $('#unlikes_for_' + getPostNumber).on('click', function(e){
+        e.preventDefault();
+        var formData = new FormData(this);
+        var url = $(this).attr('action');
+        $.ajax({
+        url: url,
+        type: "POST",
+        data: formData,
+        dataType: 'json',
+        processData: false,
+        contentType: false
+      })
 
+      .done(function(data){
+        var html = buildHTML(data);
+        
+        $('.comments-' + getPostNumber).append(html).show("slow");
+        $('.comment').val('');
+      })
+      .fail(function(){
+        alert('error');
+      })
+    })
+    */
 
   });
