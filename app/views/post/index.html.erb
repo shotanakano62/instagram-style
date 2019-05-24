@@ -56,7 +56,7 @@
                                     <%= link_to(comment.user.name, "/users/#{comment.user.id}/detail") %>
                                 </div>
                                     <div class="actual-comment">
-                                    <p><%= comment.content %></p>
+                                    <p><%= simple_format(comment.content) %></p>
                                     </div>
                                     <div class="comment-created-time">
                                         <%= comment.created_at %>
@@ -121,7 +121,7 @@
                                     <%= link_to(comment.user.name, "/users/#{comment.user.id}/detail") %>
                                 </div>
                                     <div class="actual-comment">
-                                    <p><%= comment.content %></p>
+                                    <p><%= simple_format(comment.content) %></p>
                                     </div>
                                     <div class="comment-created-time">
                                         <%= comment.created_at %>
