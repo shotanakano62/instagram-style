@@ -13,7 +13,7 @@
                     <img src="<%= post.image %>" class="posted-photo">
                 </div>
                 <div class="post-footer">
-                    <%= post.content %>
+                    <%= simple_format(post.content) %>
                 </div>
                 <div class="post-created-time">
                     <%= post.created_at %>
@@ -78,7 +78,7 @@
                     <img src="<%= post.image %>" class="posted-photo">
                 </div>
                 <div class="post-footer">
-                    <%= post.content %>
+                    <%= simple_format(post.content) %>
                 </div>
                 <div class="post-created-time">
                     <%= post.created_at %>

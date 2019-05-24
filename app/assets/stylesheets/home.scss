@@ -49,6 +49,7 @@ header {
 .header-logo {
     float: left;
     padding-left: 20px;
+    padding-top: 10px;
     color: white;
     line-height: 50px;
     font-size: 20px;
@@ -63,6 +64,7 @@ header {
 .header-menus {
     float: right;
     padding-right: 15px;
+    padding-top: 10px;
   }
 
 .header-menus li {
@@ -176,7 +178,7 @@ header {
     font-weight: 300;
     margin: 60px 0 20px;
     font-size: 24px;
-    color: white;
+    color: #0a0a0a;
   }
   
   .form-body {

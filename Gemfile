@@ -64,6 +64,9 @@ gem 'faker'
 # Install dotenv-rails to setup environment var
 gem 'dotenv-rails'
 
+# Install 'bcrypt' to make password secure
+gem 'bcrypt'
+
 group :development, :test do
  gem 'capistrano'
  gem 'capistrano-bundler'
