@@ -16,7 +16,7 @@
                     <%= simple_format(post.content) %>
                 </div>
                 <div class="post-created-time">
-                    <%= post.created_at %>
+                    <%= simple_time(post.created_at) %>
                 </div>
                 <div class="post-menu">
                     <% if @current_user.id == post.user_id%>
@@ -31,7 +31,7 @@
                             <% end %>
                         <% else %>
                             <%= link_to("/likes/#{post.id}/create", {method: "post"}) do %>
-                                <i class="far fa-heart fa-2x" id="likes_for_<% post.id %>""></i>
+                                <i class="far fa-heart fa-2x" id="likes_for_<% post.id %>"></i>
                             <% end %>
                         <% end %>
                         <strong><%= post.likes_count%></strong>
@@ -59,7 +59,7 @@
                                     <p><%= simple_format(comment.content) %></p>
                                     </div>
                                     <div class="comment-created-time">
-                                        <%= comment.created_at %>
+                                        <%= simple_time(comment.created_at) %>
                                     </div>
                             <% end %>
                         </div>
@@ -81,7 +81,7 @@
                     <%= simple_format(post.content) %>
                 </div>
                 <div class="post-created-time">
-                    <%= post.created_at %>
+                    <%= simple_time(post.created_at) %>
                 </div>
                 <div class="post-menu">
                     <% if @current_user.id == post.user_id%>
@@ -108,7 +108,7 @@
                     <div class="comment-area" id="comment-area-<%= post.id%>">
                         <%= form_tag("/posts/#{post.id}/comment",  method: :post,  id: "new_comment_for_#{post.id}" ) do %>
                         <textarea name="content" class="comment" placeholder="コメントを入力してください"></textarea>
-                        <input type="submit" value="Send">
+                        <input type="submit" value="Send" class="comment-send">
                         <% end %>
                     </div>
                     <% @comments.each do |comment|%>
@@ -124,7 +124,7 @@
                                     <p><%= simple_format(comment.content) %></p>
                                     </div>
                                     <div class="comment-created-time">
-                                        <%= comment.created_at %>
+                                        <%= simple_time(comment.created_at) %>
                                     </div>
                             <% end %>
                         </div>

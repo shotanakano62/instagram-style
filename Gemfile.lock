@@ -104,6 +104,10 @@ GEM
     formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    gon (6.2.1)
+      actionpack (>= 3.0)
+      multi_json
+      request_store (>= 1.0)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     ipaddress (0.8.3)
@@ -173,6 +177,8 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    request_store (1.4.1)
+      rack (>= 1.4)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -236,6 +242,7 @@ DEPENDENCIES
   dotenv-rails
   faker
   fog-aws
+  gon
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)

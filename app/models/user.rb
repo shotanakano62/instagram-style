@@ -25,6 +25,16 @@ class User < ApplicationRecord
     # Return `true`, if an user follows other users
     def following?(other_user)
         following.include?(other_user)
+        gon.following_include = following.include?(other_user)
     end
 
+    # 
+    
+    def self.search(search) 
+        if search
+        where(['name LIKE ?', "%#{search}%"]) #検索とnameの部分一致を表示。User.は省略
+      else
+        all #全て表示。User.は省略
+      end
+    end
 end

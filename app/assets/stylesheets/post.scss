@@ -220,5 +220,44 @@
         color: rgb(139, 135, 135);
     }
 
+    .show_comments_button {
+        cursor: pointer;
+        font-size: 18px;
+    }
     
+    .comment-header {
+        float: left;
+    }
+    .comment-header img{
+        width:40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 2px 6px #c1ced7;
+        margin-right: 10px;
+    }
+
+    .actual-comment {
+        font-size: 18px;
+        text-align: left;
+        width: 100%;
+        word-wrap: break-word;
+        margin-top: 15px;
+        clear: both;
+    }
+    
+    .actual-comment p{
+        text-align: left;
+    }
+
+    .comment-area textarea {
+        resize: none;
+        height: 70px;
+    }
+
+    .comment-send {
+        width: 100px;
+        height: 30px;
+    }
+
 }

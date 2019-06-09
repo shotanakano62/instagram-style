@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   before_action :forbid_login_user, {only: [:new, :create, :login, :login_form]}
 
   def index
-    @users= User.all.order(name: :desc)
+    @users= User.all.order(name: :desc).search(params[:search])
+    gon.current_user = @current_user
   end
 
   def user_detail
@@ -77,6 +78,10 @@ class UsersController < ApplicationController
     redirect_to("/")
   end
 
+  def search
+  @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
+  render json: @users
+end
   
 
 end

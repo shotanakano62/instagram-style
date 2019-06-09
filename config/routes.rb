@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   post "users/create" => "users#create"
   get "users/:id/edit" => "users#edit"
   post "users/:id/update" => "users#update"
+  get "users/search" => "users#search"
 
   get "login" => "users#login_form"
   post "login" => "users#login"
