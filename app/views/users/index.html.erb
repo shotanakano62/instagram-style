@@ -2,45 +2,47 @@
   <div class="container">
     <h1 class="users-heading">ユーザー</h1>
       <div class="form search-form">
-        <%= form_tag(url_for(:action => 'search'), :remote => true) do %>
+        <%= form_tag({action: :search}, method: :get, remote: true) do %>
           <%= text_field_tag :search, '', id: 'search-form', placeholder: '🔍Search' %>
           <!-- <%= submit_tag 'Search', :name => nil %> -->
         <% end %>
       </div>
+      <ul class="users-index-items">
     <% @users.each do |user| %>
-     <% if !(@current_user.name == user.name)%>
-      <ul class="users-index-items" id="users-index-items">
-            <li class="users-index-item">
-                <div class="user-left">
-                  <%= link_to(user.name,"/users/#{user.id}/detail") %>
-                </div>
-            
-            <% unless @current_user.following.include?(user)%>
+      <% if !(@current_user.name == user.name)%>
+        
+              <li class="users-index-item">
+                  <div class="user-left">
+                    <%= link_to(user.name,"/users/#{user.id}/detail") %>
+                  </div>
+              
+              <% unless @current_user.following.include?(user)%>
+                
+
+
+
+                <%= form_for(@current_user.active_relationships.build) do |f| %>
+                  <div class="follow"><%= hidden_field_tag :following_id, user.id %></div>
+                  <%= f.submit "Follow", class: "btn-flat-border" %>
+                <% end %>
+
+
+              <% else %>
+
+              
+                <%= form_for(@current_user.active_relationships.find_by(following_id: user.id), html: { method: :delete }) do |f| %>
+                  <div class="unfollow">
+                      <%= f.submit "Unfollow", class: "btn-flat-border" %>
+                  </div>
+                <% end %>
               
 
-
-
-              <%= form_for(@current_user.active_relationships.build) do |f| %>
-                <div class="follow"><%= hidden_field_tag :following_id, user.id %></div>
-                <%= f.submit "Follow", class: "btn-flat-border" %>
               <% end %>
 
-
-            <% else %>
-
-            
-              <%= form_for(@current_user.active_relationships.find_by(following_id: user.id), html: { method: :delete }) do |f| %>
-                <div class="unfollow">
-                    <%= f.submit "Unfollow", class: "btn-flat-border" %>
-                </div>
-              <% end %>
-            
-
-            <% end %>
-
-            </li>
-        </ul>
+              </li>
+          
+      <% end %>
     <% end %>
-    <% end %>
+    </ul>
   </div>
 </div>
