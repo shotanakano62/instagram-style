@@ -4,11 +4,11 @@ class UsersController < ApplicationController
   before_action :forbid_login_user, {only: [:new, :create, :login, :login_form]}
 
   def index
-    @users= User.all.order(name: :desc).search(params[:search])
+    @users= User.all.order(name: :asc).search(params[:search])
     gon.current_user = @current_user
   end
 
-  def user_detail
+  def user_friends
     @user = User.find_by(id: params[:id])
   end
 
@@ -80,8 +80,19 @@ class UsersController < ApplicationController
 
   def search
   @searched_users = User.where('name LIKE(?)', "%#{params[:search]}%")
+  end
   
-end
-  
+  def following
+    @following_users = @current_user.following
+  end
+
+  def followers
+    @follower_users = @current_user.followers
+  end
+
+  def user_friends
+    @following_users = @current_user.following
+  end
+
 
 end

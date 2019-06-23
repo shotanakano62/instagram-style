@@ -89,6 +89,7 @@ header {
     border-radius: 50%;
     object-fit: c;
     box-shadow: 0 2px 6px #646668;
+    cursor: pointer;
 }
 
 .menu-icon {
@@ -133,12 +134,12 @@ header {
     h2 {
         font-size: 70px;
         line-height: 10px;
-        display: none
+        display: none;
     }
 
     p {
         font-size: 30px;
-        display: none
+        display: none;
     }
 }
 
@@ -240,10 +241,6 @@ header {
     
   }
 
-.file-btn input {
-    
-}
-
   
   .form-body:after {
     content: '';
@@ -273,10 +270,10 @@ header {
     top: 20%;
     left: 30%;
     right: 30%;
-    background-color: #e6ecf0;
+    background-color: whitesmoke;
     padding: 20px 0;
     border-radius: 10px;
-    width: 450px;
+    width: 800px;
     height: auto;
     
 }
@@ -289,6 +286,94 @@ header {
   cursor: pointer;
 }
 
+.balloon1-top {
+  position: relative;
+  top: 50px;
+  left: 905px;
+  display: none;
+  margin: 1.5em 0;
+  padding: 7px 10px;
+  width: 300px;
+  min-width: 150px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: white;
+  box-shadow: 0 2px 6px #c1ced7;
+  z-index: 1;
+}
+
+.balloon1-top:before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 90%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-bottom: 15px solid white;
+  
+}
+
+.text-profile-username {
+  margin: 0;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  float: left;
+  width: 220px;
+  height: 20px;
+}
+
+.balloon1-top img{
+  float: right;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 6px #646668;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.balloon1-top li{
+  padding-top: 15px;
+}
+
+.balloon1-top li:hover{
+  background-color: #e9ebec
+}
+
+.text-profile-edit {
+  float: left;
+  font-size: 8px;
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  width: 220px;
+  height: 20px;
+  color: #c1ced7;
+
+}
+
+.balloon1-top a {
+  text-decoration: none;
+  color: black;
+}
+
+.user-menu-2 {
+  clear: both;
+  border-top: 1px solid #EBEDEF;
+  padding-left: 15px; 
+  padding-bottom: 10px;
+
+}
+
+.user-menu-3,.user-menu-4,.user-menu-5 {
+  padding-left: 15px;
+  padding-bottom: 10px;
+
+}
 /* CSS for iphone*/
 
 @media(max-width: 1000px){

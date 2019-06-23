@@ -1,7 +1,4 @@
-    <% if @searched_users.blank? %>
-            <p class="no-user">There is no user</p>
-    <% end %>
-    <% @searched_users.each do |user| %>
+    <% @follower_users.each do |user| %>
         <% if !(@current_user.name == user.name)%>
                 <li class="users-index-item">
                     <div class="user-header">

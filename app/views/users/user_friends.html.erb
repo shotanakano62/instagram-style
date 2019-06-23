@@ -1,7 +1,21 @@
-    <% if @searched_users.blank? %>
-            <p class="no-user">There is no user</p>
-    <% end %>
-    <% @searched_users.each do |user| %>
+<div class="main user-show">
+  <div class="container user-details">
+    <div class="user-detail">
+      <img src="<%= "#{@current_user.profile_image}" %>">
+      <h2><%= @current_user.name%></h2>
+      <p><%= @current_user.email%></p>
+    </div>
+
+    <% @user ||= current_user %>
+          <div class="stats">
+            <input id="following-list" type="radio" name="tab_item" checked>
+            <%= link_to("following", "/users/#{@current_user.id}/following", remote: true, class: "following-list")%>
+            <input id="follower-list" type="radio" name="tab_item">
+            <%= link_to("followers", "/users/#{@current_user.id}/followers", remote: true, class: "follower-list") %>
+          </div>
+    <div class="following-follower-lists">
+      <ul class="following-follower-list">
+          <% @following_users.each do |user| %>
         <% if !(@current_user.name == user.name)%>
                 <li class="users-index-item">
                     <div class="user-header">
@@ -26,3 +40,7 @@
                 </li>
         <% end %>
     <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

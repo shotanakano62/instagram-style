@@ -16,6 +16,33 @@
 //= require_tree .
 
 $(function(){
+
+    $('.user-menu').click(function(){
+        $('.balloon1-top').css('display', 'inline-block');
+        $('.user-menu').removeAttr('class');
+        $('#user-menu').addClass('user-menu-close');
+        $('.balloon1-top').show();
+    });
+
+    $('.user-menu-close').click(function(){
+      alert('Hello');
+      $('.balloon1-top').hide();
+    });
+
+    $('.following-list').click(function(){
+      $('.following-list').css('background', 'linear-gradient(-135deg, #E4A972, #9941D8)');
+      $('.following-list').css('color', '#fff');
+      $('.follower-list').css('background', '#c9c7c7');
+      $('.follower-list').css('color', 'black');
+    });
+
+    $('.follower-list').click(function(){
+      $('.follower-list').css('background', 'linear-gradient(-135deg, #E4A972, #9941D8)');
+      $('.follower-list').css('color', '#fff');
+      $('.following-list').css('background', '#c9c7c7');
+      $('.following-list').css('color', 'black');
+    });
+
     $('#open-login-modal').click(function(){
         $('#login-modal').fadeIn(500);
     });

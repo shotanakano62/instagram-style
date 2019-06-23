@@ -8,7 +8,15 @@
     font-size: 24px;
     color: rgb(10, 10, 10);
 }
-  
+
+.user-details {
+    max-width: 100%;
+    margin: 0;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    clear: both;
+}
 .users-index-item {
     padding: 20px 30px;
     background-color: white;
@@ -24,10 +32,90 @@
 }
 
 .user-detail {
-    text-align: center;
+    width: 300px;
+    text-align: left;
     background-color: white;
+    padding: 15px 15px;
+    float:left;
 }
 
+.user-detail img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: c;
+    box-shadow: 0 2px 6px #646668;
+}
+
+.user-header {
+    float: left;
+}
+.user-header img{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 6px #c1ced7;
+}
+
+.stats {
+    width: 100%;
+    margin: 0 400px 0 400px;
+}
+
+.stats a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    padding-left: 15px; 
+    padding-right: 10px; 
+}
+
+.following-list, .follower-list{
+    padding-bottom: 40px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 700px;
+    margin: 0 auto;
+    width: calc(100%/3);
+    height: 1px;
+    border-bottom: 3px solid linear-gradient(-135deg, #E4A972, #9941D8);
+    background-color: #d9d9d9;
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    color: #565656;
+    display: block;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s ease;
+  
+}
+
+    .following-list:hover{
+    opacity: 0.75;
+    }
+
+    .follower-list:hover{
+    opacity: 0.75;
+    }
+
+    input[name="tab_item"] {
+        display: none;
+    }
+
+  .stats input:checked + .following-list{
+    background: linear-gradient(-135deg, #E4A972, #9941D8);
+    color: #fff;
+  }
+
+  .following-follower-lists {
+    max-width: 900px;
+    margin: 100px 100px 20px 400px;
+    
+  }
 /* users/new, users/edit ================================ */
 
 .login-form input[type="submit"] {
@@ -61,10 +149,13 @@
 
 .user-left {
     float: left;
+    padding-top: 15px; 
+    padding-left: 15px; 
 }
 
 .btn-flat-border {
     float: right;
+    margin-top: 15px; 
 }
 
 .search-form {
@@ -75,6 +166,7 @@
 
 .no-user {
     text-align: center;
+    font-size: 18px;
 }
 
 

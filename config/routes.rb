@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   post "/posts/:id/comment" => "comment#create"
   
   get "users/index" => "users#index"
-  get "users/:id/detail" => "users#user_detail"
+  get "users/:id/friends" => "users#user_friends"
   get "signup" => "users#new"
   post "users/create" => "users#create"
   get "users/:id/edit" => "users#edit"

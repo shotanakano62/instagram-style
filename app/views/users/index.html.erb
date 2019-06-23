@@ -2,7 +2,7 @@
   <div class="container">
     <h1 class="users-heading">ユーザー</h1>
       <div class="form search-form">
-        <%= form_tag({action: :search}, method: :get, remote: true) do %>
+        <%= form_tag({action: :search}, method: :get, remote: :true) do %>
           <%= text_field_tag :search, '', id: 'search-form', placeholder: '🔍Search' %>
           <!-- <%= submit_tag 'Search', :name => nil %> -->
         <% end %>
@@ -12,6 +12,11 @@
       <% if !(@current_user.name == user.name)%>
         
               <li class="users-index-item">
+
+                <div class="user-header">
+                    <img src="<%= user.profile_image %>">
+                </div>
+
                   <div class="user-left">
                     <%= link_to(user.name,"/users/#{user.id}/detail") %>
                   </div>
