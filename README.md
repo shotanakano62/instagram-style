@@ -1,24 +1,34 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#アプリケーション概要
+Instagramのような写真共有SNSサービスです。
 
-Things you may want to cover:
+#機能一覧
+- 認証機能（ログイン・ログアウト）
+- サインアップ機能
+- ユーザー編集機能（ユーザー名、メールアドレス・アイコン画像）
+- 投稿機能（コメント・写真）
+- 投稿に対するコメント機能
+- フォロー機能
+- ユーザー一覧表示機能
 
-* Ruby version
 
-* System dependencies
+#使用技術
 
-* Configuration
+- 画像アップロード
+carrierwave, fog-aws
 
-* Database creation
+- パスワード暗号化
+bcrypt
 
-* Database initialization
+- DB
+MySQL
 
-* How to run the test suite
+- アプリケーションサーバー
+AWS EC2
 
-* Services (job queues, cache servers, search engines, etc.)
+- ストレージ
+AWS S3
 
-* Deployment instructions
-
-* ...
+- Deployment
+capistrano
