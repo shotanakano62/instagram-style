@@ -59,7 +59,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Install "carrierwave"
-gem 'carrierwave', '~> 1.2.1'
+gem 'carrierwave', '~> 1.3.2'
 gem 'fog-aws'
 
 # Install faker to create dammy data
